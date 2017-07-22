@@ -12,6 +12,7 @@ namespace ElmahExampleApplication.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            throw new ApplicationException("Oops!!!");
             return new string[] { "value1", "value2" };
         }
 

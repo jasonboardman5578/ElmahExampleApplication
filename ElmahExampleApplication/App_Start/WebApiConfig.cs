@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Elmah.Contrib.WebApi;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace ElmahExampleApplication
 {
@@ -19,6 +18,8 @@ namespace ElmahExampleApplication
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Services.Add(typeof(IExceptionLogger), new ElmahExceptionLogger());
         }
     }
 }
